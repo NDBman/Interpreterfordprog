@@ -6,7 +6,7 @@ Aritmetikai kifejezéseket feldolgozó nyelv Követelmények:
 - Típusok: aritmetikai kifejezés, szám, lista (tartalmazhat számokat is és kifejezéseket is).
 - Műveletek: 
   - A szokásos aritmetikai operátorok: +, −, /, ∗, hatvány, (, ).
-  – Helyettesítés:Pl.:a=expr((x+3)∗4∗y+x)és b=expr((z+2)+1)esetén a.substitute(x=b) eredménye (((z + 2) + 1) + 3) ∗ 4 ∗ y + ((z + 2) + 1)
+  - Helyettesítés:Pl.:a=expr((x+3)∗4∗y+x)és b=expr((z+2)+1)esetén a.substitute(x=b) eredménye (((z + 2) + 1) + 3) ∗ 4 ∗ y + ((z + 2) + 1)
   – Zárójelmentesítés: A kifejezés átalakítása olyan alakra, amelyben nincs szükség zárójelekre. Pl. 3 ∗ (4 + 5) → 3 ∗ 4 + 3 ∗ 5.
   – Egyszerűsítés: Alkalmazzunk egyszerísítési szabályokat.
   – Kiértékelés: Kiértékeli az aritmetikai kifejezést (a változók értékeit parameterekként kell megadni).
