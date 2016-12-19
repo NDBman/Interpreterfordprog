@@ -1,5 +1,5 @@
 grammar Types;
 import Symbols;
 
-type: 'num'|'list';
+type: 'num'|'list'|'exp';
 

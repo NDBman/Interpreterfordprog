@@ -1,6 +1,6 @@
-grammar Expressions;
+grammar Assignments;
 import Types, Values, Symbols;
 
-expression: type NAME EQ VALUE TERMINATOR;
+assignment: type NAME EQ VALUE TERMINATOR;
 NAME: CHAR+;
 CHAR: 'A'..'Z'|'a'..'z';

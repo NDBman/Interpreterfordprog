@@ -7,8 +7,8 @@ public class InterpreterListenerImpl extends InterpreterBaseListener {
 
 	@Override
 	public void enterStart(InterpreterParser.StartContext ctx) {
-		String name = ctx.expression().NAME().getText();
-		String value = ctx.expression().VALUE().getText();
+		String name = ctx.assignment().NAME().getText();
+		String value = ctx.assignment().VALUE().getText();
 		System.out.println("Value for: " + name + " is: " + value);
 	}
 }
