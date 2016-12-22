@@ -1,6 +1,6 @@
 grammar Interpreter;
-import Assignments, Symbols;
+import Assignments, Symbols, Functions;
 
 prog: start;
 
-start: assignment EOF;
+start: (function | assignment)*  EOF;

@@ -1,8 +1,9 @@
 package hu.unideb.inf.fordprog;
 
+import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.File;
-import java.io.FileInputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
@@ -40,16 +41,22 @@ public class Interpreter {
 			
 		}else{
 			File file = new File(Interpreter.class.getClassLoader().getResource(PATH + fileName).getFile());
-			is = new FileInputStream(file);
-			initParser(is);
-			walkParseTree();
+			BufferedReader reader = new BufferedReader(new FileReader(file));
+			String line;
+			while((line = reader.readLine()) != null){
+				InputStream istream = new ByteArrayInputStream(line.getBytes());
+				initParser(istream);
+				walkParseTree();
+			}
+
 		}
 	}
 	
 	private void walkParseTree(){
-		ParseTree tree = parser.prog();
+		ParseTree tree = parser.start();
 		ParseTreeWalker walker = new ParseTreeWalker();
 		walker.walk(new InterpreterListenerImpl(), tree);
+		
 	}
 	
 	private void initParser(InputStream inputStream) throws IOException{

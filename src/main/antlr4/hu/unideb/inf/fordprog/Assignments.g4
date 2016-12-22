@@ -1,6 +1,6 @@
 grammar Assignments;
 import Values, Symbols;
 
-assignment: NAME EQ VALUE TERMINATOR;
+assignment: NAME EQ VALUE TERMINATOR NEWLINE?;
 NAME: CHAR+;
-CHAR: 'A'..'Z'|'a'..'z';
+
